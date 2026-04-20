@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reserva El Monteón | Inversión con agua y alto potencial</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>   
+
+body{
+margin:0;
+font-family:'Montserrat',sans-serif;
+background:#0a0a0a;
+color:#eaeaea;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 30%, rgba(255,255,255,0.03), transparent 40%),
+radial-gradient(circle at 80% 70%, rgba(255,255,255,0.02), transparent 40%);
+z-index:-1;
+}
+
+header{
+text-align:center;
+padding:90px 20px;
+border-bottom:1px solid #c9a24a;
+}
+
+h1{
+font-family:'Playfair Display';
+font-size:44px;
+color:#d4af37;
+margin-bottom:10px;
+}
+
+.sub{
+color:#aaa;
+letter-spacing:2px;
+}
+
+.hero-text{
+max-width:700px;
+margin:20px auto;
+color:#ccc;
+line-height:1.7;
+}
+
+.price{
+font-size:30px;
+color:#d4af37;
+margin-top:20px;
+}
+
+.btn{
+background:#d4af37;
+color:#000;
+padding:15px 35px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
+margin-top:25px;
+}
+
+.section{
+padding:70px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.section h2{
+font-family:'Playfair Display';
+color:#d4af37;
+}
+
+.divider{
+width:80px;
+height:2px;
+background:#d4af37;
+margin:15px 0 30px 0;
+}
+
+.card{
+background:#111;
+padding:25px;
+border-radius:12px;
+border:1px solid rgba(212,175,55,0.2);
+}
+
+.card p{
+line-height:1.8;
+color:#ccc;
+}
+
+.section img{
+width:100%;
+border-radius:12px;
+margin-bottom:20px;
+transition:0.3s;
+}
+
+.section img:hover{
+transform:scale(1.02);
+}
+
+.invest{
+background:#111;
+padding:40px;
+border-radius:12px;
+text-align:center;
+border:1px solid rgba(212,175,55,0.2);
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:#fff;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+}
+
+footer{
+text-align:center;
+padding:40px;
+border-top:1px solid #c9a24a;
+color:#aaa;
+}
+
+/* HERO CON IMAGEN */
+.hero{
+position:relative;
+height:100vh;
+background:url('aerea.jpg') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+/* CAPA OSCURA */
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+top:0;
+left:0;
+}
+
+/* CONTENIDO */
+.hero-content{
+position:relative;
+z-index:2;
+max-width:700px;
+padding:20px;
+}
+
+/* LOGO */
+.logo{
+width:220px;
+margin-bottom:20px;
+filter:drop-shadow(0 0 15px rgba(212,175,55,0.4));
+}
+
+/* TEXTO */
+.hero h1{
+font-family:'Playfair Display';
+font-size:48px;
+color:#d4af37;
+}
+
+.sub{
+color:#ccc;
+letter-spacing:2px;
+}
+
+.hero-text{
+color:#ddd;
+line-height:1.7;
+margin:20px 0;
+}
+
+/* BOTÓN */
+.btn{
+background:#d4af37;
+color:#000;
+padding:15px 35px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
+margin-top:20px;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width:768px){
+.hero h1{
+font-size:32px;
+}
+
+.logo{
+width:160px;
+}
+}
+
+.logo{
+width:220px;
+display:block;
+margin:0 auto 20px auto;
+}
+
+@media (max-width:768px){
+.hero h1{
+font-size:32px;
+}
+
+.logo{
+width:160px;
+}
+}
+
+/* LOGO PRO */
+.logo{
+width:220px;
+display:block;
+margin:0 auto 25px auto;
+filter:drop-shadow(0 0 10px rgba(212,175,55,0.3));
+transition:0.3s;
+}
+
+.logo:hover{
+transform:scale(1.05);
+}
+
+/* BOTÓN FLOTANTE */
+.info-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#d4af37;
+color:#000;
+padding:16px 24px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 0 15px rgba(212,175,55,0.4);
+transition:0.3s;
+z-index:9999;
+display:block;
+}
+
+.info-btn:hover{
+transform:scale(1.08);
+}
+
+.music-btn{
+position:absolute;
+top:20px;
+right:20px;
+background:rgba(0,0,0,0.6);
+color:#d4af37;
+border:1px solid #d4af37;
+padding:10px 18px;
+border-radius:25px;
+font-size:13px;
+cursor:pointer;
+z-index:9999;
+transition:0.3s;
+backdrop-filter:blur(5px);
+}
+
+.music-btn:hover{
+background:#d4af37;
+color:#000;
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+
+<div class="overlay"></div>
+
+<button class="music-btn" onclick="toggleMusic()">
+🎧 Activar sonido
+</button>
+
+<div class="hero-content">
+    <img src="logo.png" class="logo">
+
+    <h1>Reserva El Monteón</h1>
+    <p class="sub">Inversión con agua, naturaleza y alto potencial</p>
+
+    <p class="hero-text">
+    No estás viendo un terreno común. Estás frente a un activo natural con potencial de desarrollo turístico, sustentable y de alto rendimiento.
+    </p>
+
+    <div class="price">$1,500 MXN / m²</div>
+
+    <a class="btn" href="https://wa.me/523221340289?text=Hola,%20quiero%20información%20del%20terreno%20en%20El%20Monteón" target="_blank">
+    Agendar Cita
+    </a>
+</div>
+
+</header>
+
+
+<!-- HEADLINE -->
+<div class="section invest">
+<h2>No es un terreno. Es un ecosistema listo para convertirse en negocio.</h2>
+<p>
+31,412 m² con agua natural, lagunas y ubicación estratégica en una de las zonas con mayor crecimiento de Nayarit.
+</p>
+</div>
+
+
+<!-- UBICACIÓN -->
+<div class="section">
+<h2>📍 Ubicación que genera dinero</h2>
+<div class="divider"></div>
+
+<img src="ubicacion.jpg">
+
+<div class="card">
+<p>
+Carretera Federal 200 — 5 min<br>
+Playa Punta Raza — 10 min<br>
+Guayabitos — 10 min<br>
+San Pancho — 15 min<br>
+La Mandarina — 15 min<br>
+Sayulita — 25 min<br>
+Aeropuerto de Vallarta — 1 hora<br><br>
+
+Zona activa con desarrollos en preventa, turismo constante y crecimiento sostenido.<br><br>
+
+Plusvalía estimada: 15% anual<br><br>
+
+Aquí no compras “ubicación bonita”.<br>
+Compras conectividad + flujo + crecimiento real.
+<p>
+El Monteón no es una zona en crecimiento… es una zona que ya está siendo transformada por inversión de alto nivel.<br><br>
+
+Ubicado dentro de la Riviera Nayarit, este punto se ha consolidado por su cercanía con desarrollos de lujo como One&Only Mandarina y el nuevo Rosewood Mandarina, elevando el valor de toda la región.<br><br>
+
+Conectividad estratégica:<br>
+Carretera Federal 200 — 5 min<br>
+Playa Punta Raza — 10 min<br>
+Guayabitos — 10 min<br>
+San Pancho — 20 min<br>
+Sayulita — 25 min<br>
+Aeropuerto de Vallarta — 1 hora<br><br>
+
+Indicadores reales de crecimiento:<br>
+✔ Plusvalía estimada hasta 22% anual<br>
+✔ Preventas desde $4,300 MXN/m² en desarrollos cercanos<br>
+✔ Retornos vacacionales entre 9% y 14%<br><br>
+
+El Monteón está dejando de ser zona ejidal para convertirse en un nuevo punto de inversión dentro de Riviera Nayarit.<br><br>
+
+Aquí no compras terreno… entras a una zona donde el dinero ya está llegando.
+</p>
+</div>
+</div>
+
+<!-- PLAYA PUNTA RAZA -->
+<div class="section">
+<h2>🌊 Playa Punta Raza: naturaleza, exclusividad y valor</h2>
+<div class="divider"></div>
+
+<img src="punta-raza.jpg">
+
+<div class="card">
+<p>
+A solo minutos del terreno se encuentra Punta Raza, una de las playas más exclusivas y menos exploradas de la Riviera Nayarit.<br><br>
+
+Arena suave, entorno virgen y una tranquilidad difícil de encontrar hoy en día.<br><br>
+
+🌿 Lo que la hace especial:<br><br>
+
+✔ Playa poco concurrida, rodeada de naturaleza<br>
+✔ Entorno ideal para descanso, caminatas y conexión total<br>
+✔ Oleaje del Pacífico que mantiene su carácter natural y auténtico<br><br>
+
+🏝️ Cuenta con club de playa:<br>
+Restaurante, alberca y espacios para disfrutar sin perder la esencia del lugar.<br><br>
+
+📍 Ubicación estratégica cerca de El Monteón<br><br>
+
+👉 Este tipo de playas no se desarrollan masivamente…<br>
+se convierten en puntos de alto valor para proyectos exclusivos.
+</p>
+</div>
+</div>
+
+
+<!-- AGUA -->
+<div class="section">
+<h2>El activo oculto: el agua</h2>
+<div class="divider"></div>
+
+<img src="laguna.jpg">
+
+<div class="card">
+<p>
+2 lagunas naturales activas<br>
+Agua en el subsuelo<br>
+Ecosistema vivo todo el año<br>
+Tilapia sembrada<br><br>
+
+El agua no se replica. Se valora.<br><br>
+
+Esto permite proyectos autosustentables, turísticos y de alto valor.
+<p>
+Contar con dos lagunas naturales y abundante agua en el subsuelo no es común… es lo que define el valor real de este terreno.<br><br>
+
+En zonas como Riviera Nayarit, el agua es el activo más escaso y más buscado. Aquí no solo existe: es abundante y funcional.<br><br>
+
+✔ Viabilidad para desarrollos turísticos, ecológicos o agrícolas sin depender totalmente de la red municipal<br>
+✔ Mayor plusvalía frente a terrenos sin recursos naturales<br>
+✔ Ventaja competitiva inmediata para inversionistas<br><br>
+
+Las lagunas no solo aportan agua… crean un entorno único para proyectos como:<br>
+• Eco-resorts<br>
+• Glamping<br>
+• Comunidades de retiro<br><br>
+
+Este tipo de terrenos no compiten en precio… compiten en escasez.
+</p>
+</div>
+</div>
+
+
+<!-- CARACTERÍSTICAS -->
+<div class="section">
+<h2>🌴 Características del terreno</h2>
+<div class="divider"></div>
+
+<img src="terreno.jpg">
+
+<div class="card">
+<p>
+Este terreno combina lo que pocas propiedades logran: naturaleza, funcionalidad y facilidad para desarrollar.<br><br>
+
+✔ Superficie: 31,412 m²<br>
+✔ 2 lagunas naturales activas<br>
+✔ Terreno firme (no lodoso, incluso en temporada de lluvias)<br>
+✔ Tierra fértil con abundante vegetación<br><br>
+
+La calidad del suelo permite construir sin complicaciones y al mismo tiempo aprovechar el entorno natural para proyectos ecológicos o turísticos.<br><br>
+
+Vegetación existente:<br>
+• Palmeras de coco en producción<br>
+• Árboles de parota, barcino, jaca y más<br><br>
+
+✔ Electricidad a 250 metros<br>
+✔ Entorno tranquilo, natural y con potencial de desarrollo<br><br>
+
+No es un terreno complicado… es un terreno listo para aprovecharse.
+</p>
+</div>
+</div>
+
+<!-- PROYECTO -->
+<div class="section">
+<h2>🌎 Aquí es donde está el negocio</h2>
+<div class="divider"></div>
+
+<img src="proyecto.jpg">
+
+<div class="card">
+<p>
+Este terreno no es para una sola idea… es para desarrollar un concepto completo.<br><br>
+
+La combinación de agua, vegetación y ubicación lo convierte en un punto ideal para proyectos de alto valor dentro del turismo ecológico y de bienestar.<br><br>
+
+🌿 Proyectos con mayor potencial:<br><br>
+
+Eco-Resort Boutique<br>
+Cabañas integradas entre palmeras, vistas a la laguna y experiencias naturales de alto nivel.<br><br>
+
+Centro de Bienestar / Wellness Retreat<br>
+Retiros de yoga, descanso y desconexión en un entorno privado, con acceso a playa y naturaleza.<br><br>
+
+Glamping Premium<br>
+Turismo de lujo con baja inversión estructural y alta rentabilidad.<br><br>
+
+Parque ecológico / experiencia natural<br>
+Actividades como kayak, senderismo, observación de fauna y conexión con el entorno.<br><br>
+
+¿Por qué aquí sí funciona?<br><br>
+
+✔ Las lagunas permiten experiencias únicas (no replicables)<br>
+✔ La vegetación ya genera ambiente natural listo<br>
+✔ La zona está creciendo con enfoque turístico y extranjero<br><br>
+
+Aquí no compras tierra… desarrollas un destino.
+</p>
+</div>
+</div>
+
+
+<!-- INVERSIÓN -->
+<div class="section invest">
+<h2>Oportunidad financiera</h2>
+<p>
+Precio actual: $1,500 MXN/m²<br>
+Valor estimado: $2,000 MXN/m²<br><br>
+
+✔ Margen desde la compra<br>
+✔ Alto potencial de valorización
+</p>
+</div>
+
+<!-- GALERÍA -->
+<div class="section">
+<h2>📸 Galería del proyecto</h2>
+<div class="divider"></div>
+
+<!-- TERRENO -->
+<h3 style="color:#d4af37; margin-bottom:15px;">🌴 Terreno</h3>
+<div class="gallery">
+<img src="t1.jpg">
+<img src="t2.jpg">
+<img src="t3.jpg">
+<img src="t4.jpg">
+<img src="t5.jpg">
+<img src="t6.jpg">
+</div>
+
+<br><br>
+
+<!-- AGUA -->
+<h3 style="color:#d4af37; margin-bottom:15px;">💧 Lagunas y entorno</h3>
+<div class="gallery">
+<img src="l1.jpg">
+<img src="l2.jpg">
+<img src="l3.jpg">
+<img src="l4.jpg">
+<img src="l5.jpg">
+<img src="l6.jpg">
+</div>
+
+<br><br>
+
+<!-- EL MONTEON Y PLAYA PUNTA RAZZA -->
+<h3 style="color:#d4af37; margin-bottom:15px;">🌊 Punta Raza</h3>
+<div class="gallery">
+<img src="p1.jpg">
+<img src="p2.jpg">
+<img src="p3.jpg">
+<img src="p4.jpg">
+<img src="p5.jpg">
+<img src="p6.jpg">
+</div>
+
+</div>
+
+
+<!-- CTA -->
+<div class="section invest">
+<h2>Acceso solo para inversionistas</h2>
+<p>
+Si entiendes el valor antes que el mercado… este es tu momento.
+</p>
+
+<a class="btn" href="https://wa.me/523221340289?text=Hola,%20quiero%20información%20del%20terreno%20en%20El%20Monteón" target="_blank">
+Contactar ahora
+</a>
+</div>
+
+
+<footer>
+Torrez & Maldonado Real Estate<br>
+Rodrigo Maldonado<br>
++52 322 134 0289
+</footer>
+
+
+<a class="info-btn" href="https://forms.gle/W92MVkhbpmREGUeN6" target="_blank">
+Solicitar información
+</a>
+
+<audio id="bg-music" loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let isPlaying = false;
+const audio = document.getElementById("bg-music");
+
+function toggleMusic(){
+if(!isPlaying){
+audio.play();
+isPlaying = true;
+document.querySelector(".music-btn").innerText = "🔊 Sonido activo";
+}else{
+audio.pause();
+isPlaying = false;
+document.querySelector(".music-btn").innerText = "🎧 Activar sonido";
+}
+}
+</script>
+
+</body>
+</html>
